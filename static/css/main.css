@@ -1,0 +1,64 @@
+/* Main styles for TB VISION */
+
+/* Hero section styling */
+.hero-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 5rem 0;
+    border-radius: 0.5rem;
+}
+
+/* Feature icons */
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/* Step numbers */
+.step-number {
+    background-color: #4e73df;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Override primary color */
+.bg-primary {
+    background-color: #4e73df !important;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+
+/* Gallery image hover effect */
+.gallery-item img {
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.8;
+}

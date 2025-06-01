@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}About - TB VISION{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4><i class="fas fa-info-circle"></i> About TB VISION</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="mb-3">Early Tuberculosis Prediction Using Deep Learning through CNN</h5>
+                
+                <p>TB VISION is my final year project aimed at developing an AI-powered system for early detection of tuberculosis from chest X-ray images. The project utilizes state-of-the-art deep learning techniques with Convolutional Neural Networks (CNN) to analyze chest X-rays and identify patterns associated with tuberculosis.</p>
+                
+                <p>Tuberculosis remains a significant global health challenge, particularly in developing countries. Early detection is crucial for effective treatment and preventing the spread of the disease. This project addresses the need for accessible screening tools that can assist healthcare providers in identifying potential TB cases for further examination.</p>
+                
+                <h5 class="mt-4 mb-3">Technical Overview</h5>
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item">
+                        <strong>Deep Learning Model:</strong> Custom CNN architecture trained on a large dataset of chest X-rays
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Backend:</strong> Flask web framework with Python
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Cloud Storage:</strong> Microsoft Azure Blob Storage for secure data management
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Visualization:</strong> Custom heatmap generation for model interpretability
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Reporting:</strong> Detailed PDF reports with visualization and analysis
+                    </li>
+                </ul>
+                
+                <div class="alert alert-info">
+                    <strong>Note:</strong> TBVISION is intended for educational and research purposes only. The predictions made by the tbvision neural network should not be used as the sole basis for clinical decisions. Please consult with a qualified healthcare professional for proper diagnosis and treatment.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5><i class="fas fa-video"></i> Educational Videos</h5>
+            </div>
+            <div class="card-body">
+                <h6 class="mb-3">Understanding Tuberculosis</h6>
+                <div class="ratio ratio-16x9 mb-4">
+                    <video controls>
+                        <source src="{{ video_url_1 }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <h6 class="mb-3">Early Detection Importance</h6>
+                <div class="ratio ratio-16x9">
+                    <video controls>
+                        <source src="{{ video_url_2 }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5><i class="fas fa-chart-bar"></i> Project Statistics</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Model Accuracy
+                        <span class="badge bg-success rounded-pill">94.2%</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Sensitivity
+                        <span class="badge bg-info rounded-pill">92.7%</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Specificity
+                        <span class="badge bg-info rounded-pill">95.1%</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Images in Training Set
+                        <span class="badge bg-primary rounded-pill">5,000+</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

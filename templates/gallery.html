@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}X-ray Gallery - TB VISION{% endblock %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+        <h4><i class="fas fa-images"></i>Gallery of Uploaded X-rays</h4>
+    </div>
+    <div class="card-body">
+        {% if xray_files %}
+            <div class="row">
+                {% for xray in xray_files %}
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100">
+                            <img src="{{ xray.url }}" class="card-img-top" alt="X-ray Image" style="height: 200px; object-fit: contain;">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">{{ xray.filename }}</h6>
+                                <p class="card-text"><small class="text-muted">Uploaded: {{ xray.date }}</small></p>
+                                <a href="{{ url_for('results', xray_id=xray.filename) }}" class="btn btn-sm btn-primary">View Results</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> No X-ray images have been uploaded yet.
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

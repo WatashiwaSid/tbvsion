@@ -1,0 +1,12 @@
+Flask
+Werkzeug
+numpy
+pandas
+tensorflow==2.18.0
+Pillow
+matplotlib
+seaborn
+azure-storage-blob
+reportlab==4.0.4
+python-dotenv
+flask-wtf

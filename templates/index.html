@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}TB VISION{% endblock %}
+
+{% block content %}
+<div class="hero-section text-center py-5 mb-5 bg-light rounded">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-primary"><i class="fas fa-lungs-virus"></i> TB VISION</h1>
+        <p class="lead mb-4">Early Tuberculosis Prediction Using Deep Learning.</p>
+        <p class="mb-5">Upload chest X-ray images and get instant TB screening predictions powered by advanced AI.</p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg px-4 gap-3">
+                <i class="fas fa-upload"></i> Upload X-ray
+            </a>
+            <a href="{{ url_for('about') }}" class="btn btn-outline-secondary btn-lg px-4">
+                <i class="fas fa-info-circle"></i> Learn More
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mb-5 g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                        <i class="fas fa-brain fa-2x"></i>
+                    </div>
+                    <h5 class="card-title">Deep Learning</h5>
+                    <p class="card-text">Powered by CNN architecture trained on thousands of X-ray images.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <h5 class="card-title">High Accuracy</h5>
+                    <p class="card-text">Impressive accuracy in detecting early signs of tuberculosis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3">
+                        <i class="fas fa-file-medical-alt fa-2x"></i>
+                    </div>
+                    <h5 class="card-title">Detailed Reports</h5>
+                    <p class="card-text">Get comprehensive analysis with visualizations and downloadable PDF reports.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+            <h2 class="fw-bold mb-3">How It Works</h2>
+            <div class="mb-4">
+                <div class="d-flex mb-2">
+                    <div class="step-number">1</div>
+                    <div class="ms-3">
+                        <h5>Upload X-ray</h5>
+                        <p>Upload chest X-ray images in common formats (JPEG, PNG)</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-2">
+                    <div class="step-number">2</div>
+                    <div class="ms-3">
+                        <h5>AI Analysis</h5>
+                        <p>Our deep learning model analyzes the image for TB indicators</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-2">
+                    <div class="step-number">3</div>
+                    <div class="ms-3">
+                        <h5>Get Results</h5>
+                        <p>View prediction results with confidence scores and visualizations</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="step-number">4</div>
+                    <div class="ms-3">
+                        <h5>Download Report</h5>
+                        <p>Generate and download a detailed PDF report</p>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ url_for('upload') }}" class="btn btn-primary">
+                <i class="fas fa-stethoscope"></i> Try It Now
+            </a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+            <img src="{{ url_for('static', filename='img/tbvision-logo.png') }}" alt="Illustration" class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <div class="disclaimer bg-light p-4 rounded mt-5">
+        <h5><i class="fas fa-exclamation-triangle text-warning"></i> Disclaimer</h5>
+        <p class="mb-0">TBVISION is intended for educational and research purposes only. The predictions made by the tbvision neural network should not be used as the sole basis for clinical decisions. Please consult with a qualified healthcare professional for proper diagnosis and treatment.</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 5rem 0;
+        border-radius: 0.5rem;
+    }
+    
+    .feature-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .step-number {
+        background-color: #4e73df;
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
