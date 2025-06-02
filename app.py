@@ -1,5 +1,6 @@
 import os
 import uuid
+import logging
 from flask import Flask, render_template, request, redirect, url_for, flash, send_file, jsonify, session
 from werkzeug.utils import secure_filename
 from datetime import datetime
@@ -7,9 +8,22 @@ from config import Config
 from utils.azure_storage import AzureStorage
 from utils.prediction import TBPredictor
 from utils.report_generator import PDFReportGenerator
+from utils.model_downloader import initialize_app_storage
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+# Initialize app storage and download model
+try:
+    model_path = initialize_app_storage()
+    logger.info(f"Using model at: {model_path}")
+except Exception as e:
+    logger.error(f"Failed to initialize storage: {e}")
+    raise
 
 # Create upload folder if it doesn't exist
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
