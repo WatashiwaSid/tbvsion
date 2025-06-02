@@ -83,7 +83,7 @@ class PDFReportGenerator:
         
         # Disclaimer
         disclaimer_text = (
-            "DISCLAIMER: This report is generated using a deep learning model and is intended for "
+            "DISCLAIMER: This report is generated using TBVISION, a deep learning model that uses a self-trained convolutional neural network and is intended for "
             "research and educational purposes only. The predictions should not be used as the sole basis "
             "for clinical decisions. Always consult with a qualified healthcare professional for proper "
             "diagnosis and treatment. The model's accuracy is limited, and false positives/negatives can occur."
